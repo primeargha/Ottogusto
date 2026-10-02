@@ -1,0 +1,6 @@
+echo "Running pre-push checks..."
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+cd "$REPO_ROOT/next" || exit 1
+npm run check:all

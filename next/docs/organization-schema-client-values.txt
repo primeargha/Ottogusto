@@ -1,0 +1,74 @@
+ORGANIZATION SCHEMA - CLIENT VALUE SHEET
+========================================
+
+Purpose
+-------
+This document lists all values required from the client for Organization schema updates
+across both storefronts (Ottogusto and Qverde), and highlights values sourced from env/domain.
+
+
+1) Keys That Need Client-Provided Values
+----------------------------------------
+
+Key: org_schema_markup_landing_description
+- Ottogusto: E-commerce platform specializing in genuine original equipment (OE) and premium aftermarket car parts.
+- Qverde: Specialist provider of premium original and aftermarket car parts and Selenia oils for Italian vehicle brands like Alfa Romeo and Fiat.
+
+Key: footer_info_mail
+- Ottogusto: info@ottogusto.com
+- Qverde: info@qverde.com
+
+Key: org_schema_markup_landing_telephone
+- Ottogusto: +32-3-889-20-95
+- Qverde: +32-3-889-20-95
+
+Key: org_schema_markup_landing_contact_type
+- Ottogusto: Customer Service
+- Qverde: Customer Service
+
+Key: footer_youtube_url
+- Ottogusto: https://www.youtube.com/@Ottogusto
+- Qverde: https://www.youtube.com/@qverde-italian-car-parts
+
+Key: footer_instagram_url
+- Ottogusto: https://www.instagram.com/ottogusto/
+- Qverde: https://www.instagram.com/q.verde
+
+Key: footer_linkedin_url
+- Ottogusto: https://www.linkedin.com/showcase/ottogusto/
+- Qverde: https://www.linkedin.com/showcase/qverde/
+
+Key: org_schema_markup_landing_street
+- Both: Lintsesteenweg 531B
+
+Key: org_schema_markup_landing_locality
+- Both: Hove
+
+Key: org_schema_markup_landing_region
+- Both: Flanders
+
+Key: org_schema_markup_landing_postalcode
+- Both: 2540
+
+Key: org_schema_markup_landing_country
+- Both: BE
+
+Key: org_schema_markup_landing_vat_id
+- Ottogusto: BE1006907015
+- Qverde: BE1006907015 NL827581841B01
+
+
+2) Values Not Translation-Driven (Env/Domain Based)
+----------------------------------------------------
+These values come from environment/domain setup, not translation labels:
+
+- @id -> ${NEXT_PUBLIC_FRONTEND_PROD_URL}/#organization
+- url -> ${NEXT_PUBLIC_FRONTEND_PROD_URL}
+- logo -> ${NEXT_PUBLIC_FRONTEND_PROD_URL}/assets/Logo.svg
+- name / alternateName -> ${NEXT_SITE_NAME}
+
+
+3) Environment Expectations
+---------------------------
+- Ottogusto env should resolve to: https://ottogusto.com
+- Qverde env should resolve to: https://qverde.com

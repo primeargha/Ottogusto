@@ -1,0 +1,48 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
+  "ignorePatterns": [
+    "next.config.js",
+    "copyassets.js",
+    ".next/",
+    "node_modules/",
+    "storybook-static/"
+  ],
+  "settings": {
+    "import/ignore": ["react-native", "react-native-web"]
+  },
+  "rules": {
+    "react/display-name": "off",
+    "import/no-cycle": "error",
+    "import/no-restricted-paths": [
+      "warn",
+      {
+        "zones": [
+          {
+            "target": "./components",
+            "from": "./screens",
+            "message": "Components should not import from screens"
+          },
+          {
+            "target": "./hooks",
+            "from": "./app",
+            "message": "Hooks should not import from app layer"
+          },
+          {
+            "target": "./services",
+            "from": "./app",
+            "message": "Services should not import from app layer"
+          }
+        ]
+      }
+    ],
+    "import/no-relative-parent-imports": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.story.tsx", "**/*.stories.tsx", "**/*.story_bkp.tsx"],
+      "rules": {
+        "import/no-restricted-paths": "off"
+      }
+    }
+  ]
+}

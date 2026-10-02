@@ -1,0 +1,321 @@
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import React, { useState } from 'react';
+import { fn } from 'storybook/test';
+import { OGRadioGroup } from '../../OGRadioInput';
+
+const meta = {
+  component: OGRadioGroup,
+  title: 'RadioGroup',
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'A versatile RadioGroup component with customizable styling.',
+      },
+    },
+  },
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['info', 'warning', 'error'],
+      description: 'The visual style variant of the alert',
+    },
+    title: {
+      control: { type: 'text' },
+      description: 'The title text for the alert',
+    },
+    description: {
+      control: { type: 'text' },
+      description: 'The description text for the alert',
+    },
+    iconSize: {
+      control: { type: 'number', min: 16, max: 48, step: 2 },
+      description: 'The size of the icon in pixels',
+    },
+    className: {
+      control: { type: 'text' },
+      description: 'Additional CSS classes to apply',
+    },
+  },
+} satisfies Meta<typeof OGAlert>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// Default story
+export const Default: Story = {
+  args: {
+    title: 'Information',
+    description: 'This is an informational alert message.',
+    variant: 'info',
+    iconSize: 24,
+  },
+};
+
+// Variant stories
+export const Info: Story = {
+  args: {
+    title: 'Information',
+    description: 'This is an informational alert that provides useful information to the user.',
+    variant: 'info',
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    title: 'Warning',
+    description: 'This is a warning alert that indicates a potential issue or important notice.',
+    variant: 'warning',
+  },
+};
+
+export const Error: Story = {
+  args: {
+    title: 'Error',
+    description: 'This is an error alert that indicates something went wrong and requires attention.',
+    variant: 'error',
+  },
+};
+
+// Size variants
+export const SmallIcon: Story = {
+  args: {
+    title: 'Small Icon',
+    description: 'This alert uses a smaller icon size.',
+    variant: 'info',
+    iconSize: 16,
+  },
+};
+
+export const LargeIcon: Story = {
+  args: {
+    title: 'Large Icon',
+    description: 'This alert uses a larger icon size.',
+    variant: 'warning',
+    iconSize: 32,
+  },
+};
+
+// Interactive examples with OGButton
+const InteractiveAlert = ({ variant, title, description }: { variant: 'info' | 'warning' | 'error'; title: string; description: string }) => {
+  const [showAlert, setShowAlert] = useState(false);
+
+  return (
+    <div className="flex flex-col gap-4">
+      <OGButton 
+        type="primary" 
+        onClick={() => setShowAlert(!showAlert)}
+      >
+        {showAlert ? 'Hide Alert' : `Show ${variant.charAt(0).toUpperCase() + variant.slice(1)} Alert`}
+      </OGButton>
+      {showAlert && (
+        <OGAlert
+          variant={variant}
+          title={title}
+          description={description}
+        />
+      )}
+    </div>
+  );
+};
+
+export const InteractiveInfo: Story = {
+  args: {
+    title: 'Interactive Info',
+    description: 'This alert can be toggled using the button above.',
+    variant: 'info',
+  },
+  render: (args) => (
+    <InteractiveAlert
+      variant={args.variant}
+      title={args.title}
+      description={args.description}
+    />
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'An interactive example showing how to use OGButton to trigger an info alert.',
+      },
+    },
+  },
+};
+
+export const InteractiveWarning: Story = {
+  args: {
+    title: 'Interactive Warning',
+    description: 'This warning alert can be toggled using the button above.',
+    variant: 'warning',
+  },
+  render: (args) => (
+    <InteractiveAlert
+      variant={args.variant}
+      title={args.title}
+      description={args.description}
+    />
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'An interactive example showing how to use OGButton to trigger a warning alert.',
+      },
+    },
+  },
+};
+
+export const InteractiveError: Story = {
+  args: {
+    title: 'Interactive Error',
+    description: 'This error alert can be toggled using the button above.',
+    variant: 'error',
+  },
+  render: (args) => (
+    <InteractiveAlert
+      variant={args.variant}
+      title={args.title}
+      description={args.description}
+    />
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'An interactive example showing how to use OGButton to trigger an error alert.',
+      },
+    },
+  },
+};
+
+// Multiple alerts showcase
+const MultipleAlerts = () => {
+  const [alerts, setAlerts] = useState<Array<{ id: number; variant: 'info' | 'warning' | 'error'; title: string; description: string }>>([]);
+  const [counter, setCounter] = useState(1);
+
+  const addAlert = (variant: 'info' | 'warning' | 'error') => {
+    const newAlert = {
+      id: counter,
+      variant,
+      title: `${variant.charAt(0).toUpperCase() + variant.slice(1)} Alert ${counter}`,
+      description: `This is a ${variant} alert message number ${counter}.`,
+    };
+    setAlerts([...alerts, newAlert]);
+    setCounter(counter + 1);
+  };
+
+  const removeAlert = (id: number) => {
+    setAlerts(alerts.filter(alert => alert.id !== id));
+  };
+
+  const clearAll = () => {
+    setAlerts([]);
+    setCounter(1);
+  };
+
+  return (
+    <div className="flex flex-col gap-4 w-full max-w-md">
+      <div className="flex gap-2 flex-wrap">
+        <OGButton type="primary" onClick={() => addAlert('info')}>
+          Add Info
+        </OGButton>
+        <OGButton type="secondary" onClick={() => addAlert('warning')}>
+          Add Warning
+        </OGButton>
+        <OGButton type="error" onClick={() => addAlert('error')}>
+          Add Error
+        </OGButton>
+        <OGButton type="outlined" onClick={clearAll}>
+          Clear All
+        </OGButton>
+      </div>
+      
+      <div className="flex flex-col gap-2">
+        {alerts?.map((alert) => (
+          <div key={alert.id} className="flex items-center gap-2">
+            <div className="flex-1">
+              <OGAlert
+                variant={alert.variant}
+                title={alert.title}
+                description={alert.description}
+              />
+            </div>
+            <OGButton 
+              type="outlined" 
+              size="small"
+              onClick={() => removeAlert(alert.id)}
+            >
+              ×
+            </OGButton>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const MultipleAlertsShowcase: Story = {
+  args: {
+    title: 'Multiple Alerts',
+    description: 'A showcase of multiple alerts that can be added and removed dynamically.',
+    variant: 'info',
+  },
+  render: () => <MultipleAlerts />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'A showcase of multiple alerts that can be added and removed dynamically using OGButton components.',
+      },
+    },
+  },
+};
+
+// All variants showcase
+export const AllVariants: Story = {
+  args: {
+    title: 'All Variants',
+    description: 'A showcase of all alert variants in one view.',
+    variant: 'info',
+  },
+  render: () => (
+    <div className="flex flex-col gap-4 w-full max-w-md">
+      <OGAlert
+        variant="info"
+        title="Information"
+        description="This is an informational alert message."
+      />
+      <OGAlert
+        variant="warning"
+        title="Warning"
+        description="This is a warning alert message."
+      />
+      <OGAlert
+        variant="error"
+        title="Error"
+        description="This is an error alert message."
+      />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'A showcase of all alert variants in one view.',
+      },
+    },
+  },
+};
+
+// Custom styling example
+export const CustomStyling: Story = {
+  args: {
+    title: 'Custom Styled',
+    description: 'This alert has custom styling applied through className.',
+    variant: 'info',
+    className: 'border border-blue-300 rounded-lg shadow-lg',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'An example of how to apply custom styling to the alert component.',
+      },
+    },
+  },
+}; 

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="32" in="SourceGraphic" result="blur" />
+    </filter>
+  </defs>
+  <g filter="url(#bbblurry-filter)">
+    <ellipse 
+      rx="103.5" 
+      ry="70" 
+      cx="-25.954527610259447" 
+      cy="80" 
+      fill="rgba(146, 146, 146, 0.65)"
+    />
+  </g>
+</svg>

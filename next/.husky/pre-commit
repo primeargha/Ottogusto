@@ -1,0 +1,10 @@
+echo "Running pre-commit hooks... $(dirname "$0")/_/husky.sh"
+
+# needed because of husky < v10
+# . "$(dirname "$0")/_/husky.sh"
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+cd "$REPO_ROOT/next" || exit 1
+npx lint-staged
+npm run typecheck:strict-local

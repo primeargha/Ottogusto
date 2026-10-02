@@ -1,0 +1,13 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="car-01">
+<path id="Vector" d="M6.25 30L11.25 32.5" stroke="#0A4932" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_2" d="M53.75 31.25L48.75 32.5" stroke="#0A4932" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_3" d="M20 43.75L20.6142 42.2145C21.5275 39.9312 21.9842 38.7895 22.9365 38.1448C23.8888 37.5 25.1185 37.5 27.5778 37.5H32.4222C34.8815 37.5 36.1113 37.5 37.0635 38.1448C38.0158 38.7895 38.4725 39.9312 39.3858 42.2145L40 43.75" stroke="#0A4932" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_4" d="M5 42.5V49.705C5 50.6517 5.60188 51.5175 6.5547 51.941C7.17295 52.2157 7.76345 52.5 8.47645 52.5H12.7735C13.4865 52.5 14.077 52.2157 14.6953 51.941C15.6481 51.5175 16.25 50.6517 16.25 49.705V45" stroke="#0A4932" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_5" d="M43.75 45V49.705C43.75 50.6517 44.352 51.5175 45.3048 51.941C45.923 52.2157 46.5135 52.5 47.2265 52.5H51.5235C52.2365 52.5 52.827 52.2157 53.4452 51.941C54.398 51.5175 55 50.6517 55 49.705V42.5" stroke="#0A4932" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_6" d="M50 21.25L52.5 20" stroke="#0A4932" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_7" d="M10 21.25L7.5 20" stroke="#0A4932" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path id="Vector_8" d="M11.25 22.5L13.9708 14.3377C15.0708 11.0376 15.6208 9.38758 16.9302 8.4438C18.2397 7.5 19.979 7.5 23.4576 7.5H36.5425C40.021 7.5 41.7602 7.5 43.0697 8.4438C44.3792 9.38758 44.9292 11.0376 46.0292 14.3377L48.75 22.5" stroke="#0A4932" strokeWidth="2.5" strokeLinejoin="round"/>
+<path id="Vector_9" d="M11.25 22.5H48.75C51.143 25.0337 55 28.5623 55 32.499V41.1755C55 42.6017 54.0512 43.802 52.792 43.9687L45 45H15L7.2079 43.9687C5.94888 43.802 5 42.6017 5 41.1755V32.499C5 28.5623 8.85697 25.0337 11.25 22.5Z" stroke="#0A4932" strokeWidth="2.5" strokeLinejoin="round"/>
+</g>
+</svg>

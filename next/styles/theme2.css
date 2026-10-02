@@ -1,0 +1,343 @@
+/* Variables  */
+:root {
+  --global-color-primary-color-brand: #1a237e; /* Deep blue */
+  --global-color-primary-color-main: #3949ab; /* Indigo */
+  --global-color-primary-color-light: #9fa8da; /* Light indigo */
+  --neutral-chrome-800: #b0bec5; /* Cool gray */
+  --background-beige-800: #eceff1; /* Light gray-blue */
+  --background-neutral-chrome-200: #cfd8dc;
+  --primary-colors-primary-dark: #1a237e;
+  --background-white: #ffffff;
+  --filter-pill-bg-color: #9fa8da;
+  --orders-status-background: #c5cae9;
+  --filter-pill-text-color: #1a237e;
+  --background-beige-200: #f9f9f9;
+  --background-beige-600: #f5f5f5;
+  --about-us-bg: #e0e0e0;
+  --System-Colors-Success-Extra-Light: #e8f5e9;
+
+  --primary-colors-disabled: #b0bec5;
+  --secondary-colors-disabled: #cfd8dc;
+  --primary-colors-primary-hover: #5c6bc0;
+  --hover-text-color: #5c6bc0;
+  --secondary-colors-hover: #7986cb;
+  --secondary-colors-secondary-hover: #d1c4e9;
+  --hover-green-color: #d1c4e9;
+  --brand-tarmac-black: #263238;
+  --black: #000;
+  --Text-Tarmac: #263238;
+  --Text-green: #1a237e;
+  --brand-piston-green: #1e88e5;
+  --searchbar-text-green: #263238;
+  --Primary-Colors-Main: #1e88e5;
+  --Text-Tarmac-Disabled: #90a4ae;
+  --brand-secondary-hover: #d1c4e9;
+  --System-Colors-Info-Extra-Light: #e3f2fd;
+  --System-Colors-Warning-Extra-Light: #fff3e0;
+  --System-Colors-Error-Extra-Light: #ffebee;
+  --brand-racing-green: #3949ab;
+  --card-hover-green: #e8eaf6;
+  --brand-traffic-light-green: #42a5f5;
+  --brand-traffic-deep-green: #1565c0;
+  --brand-traffic-light-green-20: #42a5f533;
+  --brand-highway-yellow: #fdd835;
+  --brand-pure-white: #ffffff;
+  --Brand-Pure-White: #fff;
+  --Text-Disabled: #b0bec5;
+  --Text-White: #fff;
+  --AddresscardHover: #cfd8dc;
+  --humburger-white: #cccccc;
+  --arrow-bg: #1e88e5;
+  --disabled-arrow-bg: #cfd8dc;
+  --Text-Tarmac-Placeholder: #90a4ae;
+  --Background-Favourite-Star: #bbdefb;
+  --system-colors-error-dark: #c62828;
+  --system-colors-error: #e53935;
+  --system-color-white: #f5f5f5;
+  --system-colors-error-main: #ef5350;
+  --System-Colors-Error-Main: #ef5350;
+  --system-colors-error-light: #ef9a9a;
+  --system-colors-error-extra-light: #ffebee;
+  --neutral-beige-800: #eceff1;
+  --neutral-beige-600: #f5f5f5;
+  --neutral-beige-400: #f5f5f5;
+  --neutral-beige-200: #fafafa;
+  --neutral-chrome-600: #b0bec5;
+  --accent-colors-accent: #fdd835;
+  --accent-colors-dark: #fbc02d;
+  --accent-colors-light: #fff9c4;
+  --neutral-chrome-801: #e0e0e0;
+}
+
+/* Text Styles  */
+.special-headings-display-1 {
+  font-family: Anton;
+  font-size: 270px;
+  line-height: 290px;
+  letter-spacing: -10px;
+  font-weight: 400;
+}
+
+.special-headings-display-2 {
+  font-family: Anton;
+  font-size: 200px;
+  line-height: 200px;
+  letter-spacing: -6px;
+  font-weight: 400;
+}
+
+.special-headings-display-3 {
+  font-family: Anton;
+  font-size: 160px;
+  line-height: 160px;
+  letter-spacing: -6px;
+  font-weight: 400;
+}
+
+.special-headings-display-4 {
+  font-family: Anton;
+  font-size: 130px;
+  line-height: 130px;
+  letter-spacing: -3px;
+  font-weight: 400;
+}
+
+.special-headings-display-5 {
+  font-family: Anton;
+  font-size: 110px;
+  line-height: 120px;
+  letter-spacing: -3px;
+  font-weight: 400;
+}
+
+.special-headings-display-6 {
+  font-family: Anton;
+  font-size: 90px;
+  line-height: 94px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.special-headings-display-7 {
+  font-family: Anton;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.special-headings-display-8 {
+  font-family: Anton;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.special-headings-display-9 {
+  font-family: Anton;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-1 {
+  font-family: Anton;
+  font-size: 54px;
+  line-height: 66px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-2 {
+  font-family: Anton;
+  font-size: 38px;
+  line-height: 50px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.headings-size-3 {
+  font-family: Anton;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-4 {
+  font-family: Anton;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-5 {
+  font-family: Anton;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-6 {
+  font-family: Anton;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.paragraph-extra-large {
+  font-family: Overpass;
+  font-size: 38px;
+  line-height: 56px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.paragraph-large {
+  font-family: Overpass;
+  font-size: 24px;
+  line-height: 38px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.paragraph-default {
+  font-family: Overpass;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.paragraph-small {
+  font-family: Overpass;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-400-regular {
+  font-family: Overpass;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-400-medium {
+  font-family: Overpass;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-400-bold {
+  font-family: Overpass;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-300-regular {
+  font-family: Overpass;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-single-300-medium {
+  font-family: Overpass;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-300-bold {
+  font-family: Overpass;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-200-regular {
+  font-family: Overpass;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-single-200-medium {
+  font-family: Overpass;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-200-bold {
+  font-family: Overpass;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-100-regular {
+  font-family: Overpass;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-single-100-medium {
+  font-family: Overpass;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-100-bold {
+  font-family: Overpass;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-50-regular {
+  font-family: Overpass;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-50-medium {
+  font-family: Overpass;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-50-bold {
+  font-family: Overpass;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}

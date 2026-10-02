@@ -1,0 +1,132 @@
+
+trigger:
+- main
+- master
+- local
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  azureSubscription: 'CP2-Digital (59b98fc7-144c-4f90-9043-c39c7e4ff8ef)'
+  appName : ottogusto
+
+stages:
+  - stage: build
+    displayName: build
+    jobs:
+      - job: "build"
+        displayName: build job
+        steps:
+
+          - task: Bash@3
+            displayName: 'Setup Environment'
+            inputs:
+              targetType: 'inline'
+              script: 'mv .env.$(appName).$(Build.SourceBranchName) .env'
+              workingDirectory: 'next'
+
+          - task: NodeTool@0
+            inputs:
+              versionSource: "spec"
+              versionSpec: "22.x"
+
+          - script: |
+              cd next
+              npm install
+              npm run build
+            displayName: "npm install, build"
+
+          - task: ArchiveFiles@2
+            displayName: "Archive output"
+            inputs:
+              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/next/.next"
+              includeRootFolder: true
+              archiveType: "zip"
+              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"
+              replaceExistingArchive: true
+ 
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+              ArtifactName: "drop"
+              publishLocation: "Container"
+
+    
+
+  - stage: Development  
+    displayName: 'Deploy to the Development environment'
+    dependsOn: Build
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: Deploy
+        environment: Development
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebApp@1
+                  displayName: "Starting Server"
+                  inputs:
+                    azureSubscription: "$(azureSubscription)"
+                    appType: "webAppLinux"
+                    appName: "cp2-dev-app-$(appName)"
+                    package: "$(Pipeline.Workspace)/drop/$(Build.BuildId).zip"
+                    deploymentMethod: "zipDeploy"
+                    startupCommand: "PORT=8080 node .next/standalone/server.js"
+
+  - stage: Production  
+    displayName: 'Deploy to the Production environment'
+    dependsOn: Build
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/master'))  ##switch branch to master when setting up master environment
+    jobs:
+
+      - deployment: Deploy
+        environment: Production
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureRmWebAppDeployment@4
+                  inputs:
+                    ConnectionType: "AzureRM"
+                    azureSubscription: "$(azureSubscription)"
+                    appType: "webAppLinux"
+                    WebAppName: "cp2-prd-app-$(appName)"
+                    packageForLinux: "$(Pipeline.Workspace)/drop/$(Build.BuildId).zip"
+                    DeploymentType: 'webDeploy'
+                    #below StartupCommand is required to run react app in linux environment.
+                    StartupCommand: "PORT=8080 node .next/standalone/server.js"
+                    ScriptType: 'Inline Script'
+                    InlineScript: |
+                        ls -lah
+                        pwd
+
+  - stage: Local  
+    displayName: 'Deploy to the Local environment'
+    dependsOn: Build
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/local'))  ##switch branch to master when setting up master environment
+    jobs:
+
+
+      - deployment: Deploy
+        environment: Development
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureRmWebAppDeployment@4
+                  displayName: "Starting Server"
+                  inputs:
+                    ConnectionType: "AzureRM"
+                    azureSubscription: "$(azureSubscription)"
+                    appType: "webAppLinux"
+                    WebAppName: "cp2-dev-app-local"
+                    packageForLinux: "$(Pipeline.Workspace)/drop/$(Build.BuildId).zip"
+                    DeploymentType: 'webDeploy'
+                    #below StartupCommand is required to run react app in linux environment.
+                    StartupCommand: "PORT=8080 node .next/standalone/server.js"
+                    ScriptType: 'Inline Script'
+                    InlineScript: |
+                        ls -lah
+                        pwd

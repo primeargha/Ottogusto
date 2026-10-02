@@ -1,0 +1,76 @@
+/* Storybook-specific CSS imports */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Oswald:wght@400;500;700&family=Public+Sans:wght@400;500;700&display=swap");
+
+/* Import the main styles */
+@import "../styles/global.css";
+@import "../styles/theme.css";
+
+/* Map existing CSS variables to custom Tailwind classes */
+:root {
+  /* Map existing variables to the ones expected by Tailwind config */
+  --color-primary-main: var(--Primary-Colors-Main);
+  --color-primary-hover: var(--primary-colors-primary-hover);
+  --color-primary-disabled: var(--primary-colors-disabled);
+
+  --color-secondary-main: var(--brand-traffic-light-green);
+  --color-secondary-hover: var(--secondary-colors-hover);
+  --color-secondary-disabled: var(--secondary-colors-disabled);
+
+  --color-text-on-dark: var(--Text-White);
+  --color-text-on-brand: var(--Text-White);
+
+  --color-system-error-main: var(--System-Colors-Error-Main);
+
+  /* Map the piston color variable */
+  --color-piston-900m: var(--brand-piston-green);
+
+  /* Typography variables */
+  --font-family-body: "Inter", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-xs: 12px;
+  --font-size-sm: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-line-height-xs: 14px;
+  --font-line-height-sm: 18px;
+  --font-line-height-md: 20px;
+  --font-line-height-lg: 22px;
+}
+
+/* Ensure custom Tailwind utilities are available */
+@layer utilities {
+  /* Custom color utilities */
+  .bg-color-primary-main {
+    background-color: var(--color-primary-main);
+  }
+  .bg-color-primary-hover {
+    background-color: var(--color-primary-hover);
+  }
+  .bg-color-primary-disabled {
+    background-color: var(--color-primary-disabled);
+  }
+
+  .text-color-text-on-dark {
+    color: var(--color-text-on-dark);
+  }
+  .text-color-primary-main {
+    color: var(--color-primary-main);
+  }
+
+  .border-color-primary-main {
+    border-color: var(--color-primary-main);
+  }
+  .border-primary-colors-disabled {
+    border-color: var(--primary-colors-disabled);
+  }
+
+  /* Custom typography utilities */
+  .body-regular-sm {
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-sm);
+    line-height: var(--font-line-height-sm);
+  }
+}

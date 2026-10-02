@@ -1,0 +1,152 @@
+/* Typography System - Reusable classes using CSS variables from client-theme-config.ts */
+
+/* ===== HEADING STYLES ===== */
+.typography-h1 {
+  font-family: var(--font-family-anton);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-3xl);
+  line-height: var(--font-lineheight-xl);
+}
+
+.typography-h2 {
+  font-family: var(--font-family-anton);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-2xl);
+  line-height: var(--font-lineheight-lg);
+}
+
+/* ===== BODY STYLES - BOLD ===== */
+.typography-body-bold-xs {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xs);
+  line-height: var(--font-lineheight-xs);
+}
+
+.typography-body-bold-sm {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  line-height: var(--font-lineheight-sm);
+}
+
+.typography-body-bold-md {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  line-height: var(--font-lineheight-md);
+}
+
+.typography-body-bold-lg {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  line-height: var(--font-lineheight-lg);
+}
+
+/* ===== BODY STYLES - MEDIUM ===== */
+.typography-body-medium-xs {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xs);
+  line-height: var(--font-lineheight-xs);
+}
+
+.typography-body-medium-sm {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  line-height: var(--font-lineheight-sm);
+}
+
+.typography-body-medium-md {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
+  line-height: var(--font-lineheight-md);
+}
+
+.typography-body-medium-lg {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: var(--font-lineheight-lg);
+}
+
+/* ===== BODY STYLES - REGULAR ===== */
+.typography-body-regular-xs {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xs);
+  line-height: var(--font-lineheight-xs);
+}
+
+.typography-body-regular-sm {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-sm);
+  line-height: var(--font-lineheight-sm);
+}
+
+.typography-body-regular-md {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
+  line-height: var(--font-lineheight-md);
+}
+
+.typography-body-regular-lg {
+  font-family: var(--font-family-overpass);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  line-height: var(--font-lineheight-lg);
+}
+
+/* ===== SEMANTIC TEXT STYLES ===== */
+.text-single-300-regular {
+  @apply typography-body-regular-lg;
+}
+
+.text-single-300-medium {
+  @apply typography-body-medium-lg;
+}
+
+.text-single-300-bold {
+  @apply typography-body-bold-lg;
+}
+
+.text-single-200-regular {
+  @apply typography-body-regular-md;
+}
+
+.text-single-200-medium {
+  @apply typography-body-medium-md;
+}
+
+.text-single-200-bold {
+  @apply typography-body-bold-md;
+}
+
+.text-single-100-regular {
+  @apply typography-body-regular-sm;
+}
+
+.text-single-100-medium {
+  @apply typography-body-medium-sm;
+}
+
+.text-single-100-bold {
+  @apply typography-body-bold-sm;
+}
+
+.text-single-50-regular {
+  @apply typography-body-regular-xs;
+}
+
+.text-single-50-medium {
+  @apply typography-body-medium-xs;
+}
+
+.text-single-50-bold {
+  @apply typography-body-bold-xs;
+}

@@ -1,0 +1,445 @@
+/* Variables  */
+:root {
+  /* Button Variables */
+  /* Primary Button */
+  --color-button-primary-bg-default: #006341ff;
+  --color-button-primary-bg-disabled: #aec1ba;
+  --color-button-primary-bg-hover: #2c6e49ff;
+  --color-button-primary-text: #ffffff;
+  --color-button-primary-text-disabled: #ffffff;
+  --color-button-primary-icon: #ffffff;
+  --color-button-primary-icon-disabled: #ffffff;
+
+  /* Outline Button */
+  --color-button-outline-bg-default: transparent;
+  --color-button-outline-bg-disabled: transparent;
+  --color-button-outline-bg-hover: #f2f1ebff;
+  --color-button-outline-text: #006341ff;
+  --color-button-outline-text-disabled: #aec1ba;
+  --color-button-outline-icon: #006341ff;
+  --color-button-outline-icon-disabled: #aec1ba;
+  --color-button-outline-border: #006341ff;
+  --color-button-outline-border-disabled: #aec1ba;
+
+  /* Danger Button */
+  --color-button-danger-bg-default: #c20000;
+  --color-button-danger-bg-disabled: #e0868bff;
+  --color-button-danger-bg-hover: #c83434ff;
+  --color-button-danger-text: #ffffff;
+  --color-button-danger-text-disabled: #ffffff;
+  --color-button-danger-icon: #ffffff;
+  --color-button-danger-icon-disabled: #ffffff;
+
+  /* Danger Outline Button */
+  --color-button-danger-outline-bg-default: transparent;
+  --color-button-danger-outline-bg-disabled: transparent;
+  --color-button-danger-outline-bg-hover: #fdedeeff;
+  --color-button-danger-outline-text: #e84855ff;
+  --color-button-danger-outline-text-disabled: #e0868bff;
+  --color-button-danger-outline-icon: #e84855ff;
+  --color-button-danger-outline-icon-disabled: #e0868bff;
+  --color-button-danger-outline-border: #e84855ff;
+  --color-button-danger-outline-border-disabled: #e0868bff;
+  /* Button Ends Here */
+
+  /* Existing Variables */
+  --global-color-primary-color-brand: #062c1eff;
+  --global-color-primary-color-main: #006341ff;
+  --global-color-primary-color-light: #72ceacff;
+  --neutral-400: #e8e5dc;
+  --neutral-chrome-800: #cdc8b6;
+  --background-beige-800: #f2f1eb;
+  --background-neutral-chrome-200: #ebe9e2;
+  --primary-colors-primary-dark: #062c1e;
+  --background-white: #ffffff;
+  --filter-pill-bg-color: #c6e6d1;
+  --orders-status-background: #c1e1ca;
+  --filter-pill-text-color: #022c22;
+  --background-beige-200: #fcfcfb;
+  --System-Colors-Warning-Light: #f3c980;
+  --background-beige-600: #f7f7f3;
+  --about-us-bg: #dadde5;
+
+  --System-Colors-Success-Extra-Light: #e5fef6;
+  --light-green: #ebf5e9;
+  --light-blue: #3c91e6;
+  --l2-l3-categories-title: #0f172a;
+  --l2-categories-bg: #f0f0f0;
+}
+/* Color Styles  */
+:root {
+  --primary-colors-disabled: #aec1ba;
+  --secondary-colors-disabled: #bbd7c9;
+  --primary-colors-primary-hover: #2c6e49ff;
+  --hover-text-color: #2c6e49;
+  --secondary-colors-hover: #028735;
+  --Neutral-Black: #09101d;
+  --secondary-colors-secondary-hover: #d9ead3ff;
+  --hover-green-color: #d9ead3;
+  --brand-tarmac-black: #0c271dff;
+  --black: #000;
+  --Text-Tarmac: #0c271d;
+  --Text-green: #062b1e;
+  --brand-piston-green: #0a4932ff;
+  --searchbar-text-green: #0c271d;
+  --Primary-Colors-Main: #0a4932;
+  --Saved-Cars-Tablet: #faf1e8;
+  --Text-Tarmac-Disabled: #95b0a6;
+  --brand-secondary-hover: #d9ead3ff;
+  --System-Colors-Info-Extra-Light: #deeaf8;
+  --System-Colors-Warning-Extra-Light: #fdf7ec;
+  --System-Colors-Error-Extra-Light: #fdedee;
+  --brand-racing-green: #006341ff;
+  --card-hover-green: #caebda;
+  --brand-traffic-light-green: #009f4d;
+  --brand-traffic-deep-green: #00401e;
+  --brand-traffic-light-green-20: #009f4d33;
+  --brand-traffic-light-green-2: #009f4d;
+  --grey-Colors-Grey-400: #b7b7b7;
+  --Neutral-Neutral-5: #858c94;
+  --Grey-Colors-Grey-900: #303030;
+  --Grey-Colors-Grey-600: #727272;
+  --brand-highway-yellow: #ffd31aff;
+  --brand-pure-white: #ffffffff;
+  --Brand-Pure-White: #fff;
+  --Text-Disabled: #aec1ba;
+  --Text-White: #fff;
+  --Neutral-Chrome-50: #f5f4f0;
+  --AddresscardHover: #c4cac8;
+  --humburger-white: #cccccc;
+  --arrow-bg: #039f4e;
+  --disabled-arrow-bg: #b2cec0;
+  --Text-Tarmac-Placeholder: #8f8f8f;
+  --Background-Favourite-Star: #b5eccf;
+  --system-colors-error-dark: #c83434ff;
+  --system-colors-error: #c83434;
+  --system-color-white: #e0e0d1;
+  --system-colors-error-main: #e84855ff;
+  --System-Colors-Error-Main: #e84855;
+  --system-green-color: #e8f5e9;
+  --system-colors-error-light: #e0868bff;
+  --system-colors-error-extra-light: #fdedeeff;
+  --neutral-beige-800: #f2f1ebff;
+  --neutral-beige-600: #f7f7f3ff;
+  --neutral-beige-400: #f7f7f3;
+  --neutral-beige-200: #fcfcfbff;
+  --neutral-beige-800: #f2f1ebff;
+  --neutral-beige-200: #fcfcfbff;
+  --neutral-chrome-600: #d7d3c5;
+  --accent-colors-accent: #ffd31aff;
+  --accent-colors-dark: #997f0fff;
+  --accent-colors-light: #fff6d1ff;
+  --neutral-chrome-801: #e4e7e9;
+  --text-zinc-800: #333333;
+  --text-white-light: #64748b;
+  --text-white-light1: #d9d9d9;
+  --text-white-light2: #cdcb86;
+  --background-green: #72cdac;
+  --light-green-white: #d4d8d3;
+}
+
+:root {
+  /* Standard Font Sizes */
+  --text-xs: 12px;
+  --text-sm: 16px;
+  --text-md: 20px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+  --text-2xl: 40px;
+  --text-3xl: 56px;
+
+  --text-xs-m: 12px;
+  --text-sm-m: 16px;
+  --text-md-m: 18px;
+  --text-lg-m: 20px;
+  --text-xl-m: 24px;
+  --text-2xl-m: 32px;
+  --text-3xl-m: 40px;
+
+  /* Standard Line Hight */
+  --lh-xs: 16px;
+  --lh-sm: 28px;
+  --lh-md: 36px;
+  --lh-lg: 48px;
+  --lh-xl: 64px;
+  --lh-xs-m: 16px;
+  --lh-sm-m: 24px;
+  --lh-md-m: 32px;
+  --lh-lg-m: 40px;
+  --lh-xl-m: 48px;
+}
+
+/* Text Styles  */
+.special-headings-display-1 {
+  font-family: var(--font-anton);
+  font-size: 270px;
+  line-height: 290px;
+  letter-spacing: -10px;
+  font-weight: 400;
+}
+
+.special-headings-display-2 {
+  font-family: var(--font-anton);
+  font-size: 200px;
+  line-height: 200px;
+  letter-spacing: -6px;
+  font-weight: 400;
+}
+
+.special-headings-display-3 {
+  font-family: var(--font-anton);
+  font-size: 160px;
+  line-height: 160px;
+  letter-spacing: -6px;
+  font-weight: 400;
+}
+
+.special-headings-display-4 {
+  font-family: var(--font-anton);
+  font-size: 130px;
+  line-height: 130px;
+  letter-spacing: -3px;
+  font-weight: 400;
+}
+
+.special-headings-display-5 {
+  font-family: var(--font-anton);
+  font-size: 110px;
+  line-height: 120px;
+  letter-spacing: -3px;
+  font-weight: 400;
+}
+
+.special-headings-display-6 {
+  font-family: var(--font-anton);
+  font-size: 90px;
+  line-height: 94px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.special-headings-display-7 {
+  font-family: var(--font-anton);
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.special-headings-display-8 {
+  font-family: var(--font-anton);
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.special-headings-display-9 {
+  font-family: var(--font-anton);
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-1 {
+  font-family: var(--font-anton);
+  font-size: 54px;
+  line-height: 66px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-2 {
+  font-family: var(--font-anton);
+  font-size: 38px;
+  line-height: 50px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.headings-size-3 {
+  font-family: var(--font-anton);
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-4 {
+  font-family: var(--font-anton);
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-5 {
+  font-family: var(--font-anton);
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.headings-size-6 {
+  font-family: var(--font-anton);
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.paragraph-extra-large {
+  font-family: var(--font-overpass);
+  font-size: 38px;
+  line-height: 56px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.paragraph-large {
+  font-family: var(--font-overpass);
+  font-size: 24px;
+  line-height: 38px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.paragraph-default {
+  font-family: var(--font-overpass);
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.paragraph-small {
+  font-family: var(--font-overpass);
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-400-regular {
+  font-family: var(--font-overpass);
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-400-medium {
+  font-family: var(--font-overpass);
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-400-bold {
+  font-family: var(--font-overpass);
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-300-regular {
+  font-family: var(--font-overpass);
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-single-300-medium {
+  font-family: var(--font-overpass);
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-300-bold {
+  font-family: var(--font-overpass);
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-200-regular {
+  font-family: var(--font-overpass);
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-single-200-medium {
+  font-family: var(--font-overpass);
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-200-bold {
+  font-family: var(--font-overpass);
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-100-regular {
+  font-family: var(--font-overpass);
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-single-100-medium {
+  font-family: var(--font-overpass);
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-100-bold {
+  font-family: var(--font-overpass);
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-50-regular {
+  font-family: var(--font-overpass);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-50-medium {
+  font-family: var(--font-overpass);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+
+.text-single-50-bold {
+  font-family: var(--font-overpass);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  font-weight: 400;
+}
+/*  */
+/* Yellow Range Slider */

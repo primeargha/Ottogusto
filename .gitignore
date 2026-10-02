@@ -1,0 +1,14 @@
+expo-app/*
+universal/*
+yarn.lock
+next/.yarnrc.yml
+next/yarn.lock
+next/.yarn/install-state.gz
+next/.yarn/releases/yarn-4.6.0.cjs
+node_modules/.yarn-integrity
+next/data/app.db
+next/data/app.db-shm
+next/data/app.db-wal
+next/tsconfig.tsbuildinfo
+./next/tsconfig.tsbuildinfo
+.env

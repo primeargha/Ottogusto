@@ -1,0 +1,586 @@
+/* PERF: Removed duplicate Google Fonts @import — fonts are already loaded via next/font/google in layout.tsx
+   This eliminates a render-blocking CSS request (~200-500ms savings on FCP/LCP) */
+
+@import url("./theme.css");
+
+/* ---------------------------------------------- */
+/* Dynamic CSS generation removed - now using direct color values in Tailwind config */
+
+/* ----------------------------------------- */
+
+/* NOT needed now @import url("./generated-theme-variables.css");  */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  /* justify-content: center; */
+}
+
+/* sidebar.js injects a 192px in-flow column. body is a row flex container,
+   so on a phone that column squeezes the site. Keep the widget, but take it
+   out of flow so the page stays full width. */
+@media (max-width: 719px) {
+  .wwk-sidebar--top-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    width: auto;
+    height: auto;
+  }
+}
+
+@theme {
+  --ripple-color: oklch(0.72 0.11 178);
+}
+
+/* stage width utility */
+@layer components {
+  /* Range slider wrapper */
+  /* #range-slider-price {
+    @apply bg-color-icon-muted;
+  } */
+
+  /* Active range */
+  /* #range-slider-price .range-slider__range[data-active] {
+    @apply h-4 bg-color-icon-muted transition-all duration-300;
+  } */
+
+  /* Thumb (both handles) */
+  /* #range-slider-price.range-slider  */
+}
+
+.range-slider-price {
+  /* @apply h-4 bg-color-icon-muted transition-all duration-300; */
+  height: 0.4rem !important;
+}
+
+.range-slider__range {
+  /* blue bar */
+  background-color: var(--color-icon-brand) !important;
+  height: 0.5rem !important;
+}
+
+/* green balls */
+.range-slider__thumb {
+  background-color: var(--color-icon-brand) !important;
+  border: none;
+}
+
+#range-slider-price {
+  background-color: var(--color-icon-muted) !important;
+}
+/* Floating tabs width utility */
+@layer utilities {
+  .floatingTabsWidth {
+    @apply w-full;
+
+    @media (min-width: 768px) and (max-width: 867px) {
+      width: 640px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 868px) and (max-width: 967px) {
+      width: 720px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 968px) and (max-width: 1067px) {
+      width: 700px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 1068px) and (max-width: 1167px) {
+      width: 745px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 1168px) and (max-width: 1267px) {
+      width: 830px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1367px) {
+      width: 904px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 1368px) and (max-width: 1467px) {
+      width: 1030px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 1468px) and (max-width: 1567px) {
+      width: 1075px;
+      margin-left: 60px;
+    }
+    @media (min-width: 1568px) and (max-width: 1667px) {
+      width: 990px;
+      margin-left: 60px;
+    }
+
+    @media (min-width: 1668px) {
+      width: 1170px;
+      margin-left: 60px;
+    }
+  }
+}
+
+/* Master Block width utility */
+@layer utilities {
+  .masterBlockWidth {
+    @apply ml-0;
+
+    @media (min-width: 992px) and (max-width: 1092px) {
+      margin-left: 130px;
+    }
+
+    @media (min-width: 1093px) and (max-width: 1192px) {
+      margin-left: 185px;
+    }
+
+    @media (min-width: 1193px) and (max-width: 1292px) {
+      margin-left: 150px;
+    }
+
+    @media (min-width: 1293px) and (max-width: 1392px) {
+      margin-left: 150px;
+    }
+
+    @media (min-width: 1393px) and (max-width: 1492px) {
+      margin-left: 150px;
+    }
+
+    @media (min-width: 1393px) and (max-width: 1492px) {
+      margin-left: 150px;
+    }
+
+    @media (min-width: 1493px) {
+      margin-left: -120px;
+    }
+  }
+}
+
+@layer utilities {
+  .handCardTop {
+    top: 185px; /* Default for >= 1600px */
+
+    @media (min-width: 768px) and (max-width: 1599px) {
+      top: 204px;
+    }
+  }
+}
+
+@layer utilities {
+  .customTabWidthRange {
+    /* Default width for >= 1025px if needed */
+    width: /* your-default-width */ 320px;
+
+    @media (min-width: 640px) and (max-width: 700px) {
+      width: /* your-width-for-640-700 */ 220px;
+    }
+
+    @media (min-width: 701px) and (max-width: 750px) {
+      width: /* your-width-for-701-750 */ 240px;
+    }
+
+    @media (min-width: 751px) and (max-width: 800px) {
+      width: /* your-width-for-751-800 */ 230px;
+    }
+
+    @media (min-width: 801px) and (max-width: 850px) {
+      width: /* your-width-for-801-850 */ 230px;
+    }
+
+    @media (min-width: 851px) and (max-width: 900px) {
+      width: /* your-width-for-851-900 */ 320px;
+    }
+
+    @media (min-width: 901px) and (max-width: 950px) {
+      width: /* your-width-for-901-950 */ 350px;
+    }
+
+    @media (min-width: 951px) and (max-width: 1024px) {
+      width: /* your-width-for-951-1024 */ 280px;
+    }
+  }
+}
+
+@layer utilities {
+  .customButtonHeight {
+    @apply h-10;
+
+    @media (min-width: 768px) {
+      /* md */
+      height: 2.5rem; /* h-10 */
+    }
+
+    @media (min-width: 1024px) {
+      /* lg */
+      height: 2.75rem; /* h-11 */
+    }
+
+    @media (min-width: 1536px) {
+      /* 2xl */
+      height: 2rem; /* h-8 */
+    }
+
+    @media (min-width: 1536px) and (max-width: 1599px) {
+      /* Custom range */
+      height: 2.5rem; /* override to h-10 */
+    }
+  }
+}
+
+@layer utilities {
+  .responsiveJustify {
+    @apply justify-evenly;
+
+    @media (min-width: 992px) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+#CookiebotWidget {
+  display: none !important;
+}
+
+.left_nav {
+  position: fixed !important;
+  z-index: 11 !important;
+  top: calc(50vh - 190px); /* header 75 and left nave height 540px */
+}
+
+.left_nav .left_nav_itm:hover:not(.active) {
+  background-image: url(/assets/left-sidebar/hover_bg_light.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* padding: 14px; */
+}
+
+.left_nav .active {
+  background-image: url(/assets/left-sidebar/hover_bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* padding: 7px 14px; */
+}
+
+.left_nav .left_nav_itm {
+  cursor: pointer;
+}
+
+/* Effects start here  */
+
+.ripple-effect {
+  overflow: hidden;
+}
+
+span.ripples {
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: rippleAnimation 1s linear infinite;
+}
+
+@keyframes ripplesanimate {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.2;
+  }
+
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
+@keyframes openClose {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-openClose {
+  animation: openClose 12s ease-in-out infinite;
+}
+
+.bg-hero-1 {
+  background-image: url("/assets/bg.jpg");
+}
+
+.bg-hero-2 {
+  background-image: url("/assets/bg1.png");
+}
+
+.bg-transition {
+  transition: background-image 1s ease-in-out;
+}
+
+/* directional ripple effect */
+.hover\:bg-\[\#D9EAD3\]:hover span {
+  width: 100px;
+  height: 100px;
+}
+
+/* button:active span {
+  background: rgba(255, 255, 255, 0.3);
+} */
+
+/* Custom Scrollbar */
+
+/* Custom Scrollbar - Cross Browser Support */
+
+.custom-scrollbar {
+  /* For Webkit browsers (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    width: 8px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 8px;
+    height: 90px;
+    border-radius: 20px;
+    background: #cdc8b6 !important; /* Neutral-Chrome-800 */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  /* For Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #cdc8b6 #f7f7f3;
+}
+
+/* For Internet Explorer and Edge */
+.custom-scrollbar {
+  -ms-overflow-style: auto;
+}
+
+.custom-scrollbar::-ms-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-ms-thumb {
+  background: #cdc8b6;
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-ms-track {
+  background: #ffffff;
+}
+
+/* OG Search  */
+.relative-card {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  /* height: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.relative-card .floating-tabs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* height: 64px; */
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.relative-card .content-panel {
+  position: relative;
+  /* width: 100%; */
+  /* height: 325px; */
+  background-color: #fff;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.relative-card .content-panel .no-cut-1 {
+  position: absolute;
+  top: -45px;
+  height: 45px;
+  background-color: #fff;
+  border-top-left-radius: 8px;
+}
+
+.relative-card .content-panel .no-cut-1::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border-radius: 50%;
+  bottom: 0;
+  right: -25px;
+  box-shadow: -10px 10px 0 #fff;
+}
+
+.relative-card .content-panel .no-cut-2 {
+  position: absolute;
+  top: -45px;
+  height: 45px;
+  right: 0;
+  background-color: #fff;
+  border-top-right-radius: 8px;
+}
+
+.relative-card .content-panel .no-cut-2::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border-radius: 50%;
+  bottom: 0;
+  left: -25px;
+  box-shadow: 10px 10px 0 #fff;
+}
+.radio-green[type="radio"] {
+  accent-color: #0a4932 !important;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.15em;
+  height: 1.15em;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  margin: 0;
+  display: grid;
+  place-content: center;
+}
+
+.radio-green[type="radio"]:checked {
+  border-color: #0a4932;
+}
+
+.radio-green[type="radio"]:checked::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  background-color: #0a4932;
+  transform: scale(1);
+}
+
+.radio-green[type="radio"]:hover,
+.radio-green[type="radio"]:active,
+.radio-green[type="radio"]:focus {
+  border-color: #0a4932;
+  outline: none;
+}
+
+/* Input css */
+
+.custom-text-input {
+  height: 64px;
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+  border: 1px solid #0a4932;
+}
+
+.custom-text-input:focus {
+  outline: none !important;
+  border: 1px solid #0a4932 !important;
+}
+
+.custom-text-input.error {
+  border: 1px solid #c83434;
+}
+
+.custom-text-input.error:focus {
+  outline: none;
+  border: 1px solid #c83434;
+}
+
+@media (min-width: 768px) {
+  .custom-text-input {
+    width: 326.667px;
+  }
+}
+
+.css-textinput-11aywtz {
+  outline: none !important;
+}
+
+.popular-brand-card {
+  width: clamp(200px, calc(20% - 1rem), 20%);
+  margin: 0 0.5rem !important;
+}
+
+.popular-brand-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+/* Modal backdrop helper for cross-device consistency */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Firefox-specific tweak: slightly stronger backdrop */
+@-moz-document url-prefix() {
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.55) !important;
+  }
+}
+
+@media only screen and (max-width: 1190px) {
+  .popular-brand-container {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .popular-brand-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* CLS fix: Cookiebot's consent banner is injected by a third-party script (loaded via
+   GTM) well after first paint, with no first-party placeholder reserving space for it.
+   By default it renders in normal document flow and pushes all page content down when
+   it appears, which is scored as a large layout shift (worse on mobile, where it takes
+   up a much bigger fraction of the viewport). Forcing it to `position: fixed` takes it
+   out of document flow entirely so its arrival can no longer reflow anything below it —
+   it still displays and still blocks/allows consent normally, it just overlays instead
+   of pushing content. */
+#CybotCookiebotDialog {
+  position: fixed !important;
+}
+
+/* Price meter css */
+
+/* #range-slider-price .range-slider__thumb[data-active] {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+#range-slider-price .range-slider__range[data-active] {
+  height: 16px;
+} */
